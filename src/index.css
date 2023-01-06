@@ -13,3 +13,81 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/** custom css **/
+header{
+  margin: 25px 0;
+}
+
+.logo a {text-decoration: none;color: #000;}
+
+.logo a span {
+  font-size: 25px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+header .logo a span{
+  font-size: 30px;
+  color: #222;
+}
+
+nav.menu ul{
+  margin: 0;
+  padding: 0;
+}
+
+nav.menu ul li {
+  display: inline-block;
+}
+
+nav.menu ul li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #000;
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* footer  */
+footer{
+  margin: 50px 0;
+}
+
+footer .logo a span{
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.widget-title {
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+footer .widget .widget-wrapper p{
+  font-weight: 300;
+}
+
+.widget ul {
+  margin: 0;
+  padding: 0;
+}
+
+.widget ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.widget ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 300;
+}
+
+.copyright p{
+  font-weight: 300;
+}
