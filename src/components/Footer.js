@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
     render() {
@@ -11,9 +12,9 @@ class Footer extends Component {
                                 <div className="widget text-start">
                                     <div className="widget-wrapper">
                                         <div className="logo mb-2">
-                                            <a href="/">
+                                            <Link to="/">
                                                 <span>Photo Album</span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet non esse iusto consequuntur eaque error aspernatur doloremque soluta ipsam. Neque </p>
@@ -26,11 +27,11 @@ class Footer extends Component {
                                         <h3 className="widget-title">Useful Links</h3>
                                         <div className="widget-content">
                                             <ul>
-                                                <li><a href="/">Home</a></li>
-                                                <li><a href="#">Disclaimer</a></li>
-                                                <li><a href="#">Faq</a></li>
-                                                <li><a href="#">Privacy Policy</a></li>
-                                                <li><a href="#">Contact</a></li>
+                                                <li><Link to="/">Home</Link></li>
+                                                <li><Link to="">Disclaimer</Link></li>
+                                                <li><Link to="">Faq</Link></li>
+                                                <li><Link to="">Privacy Policy</Link></li>
+                                                <li><Link to="/contact">Contact</Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -42,11 +43,11 @@ class Footer extends Component {
                                         <h3 className="widget-title">Categories</h3>
                                         <div className="widget-content">
                                             <ul>
-                                                <li><a href="#">Community</a></li>
-                                                <li><a href="#">Jobs</a></li>
-                                                <li><a href="#">Vehicles</a></li>
-                                                <li><a href="#">Flower</a></li>
-                                                <li><a href="#">Mountain</a></li>
+                                                <li><Link to="">Community</Link></li>
+                                                <li><Link to="">Jobs</Link></li>
+                                                <li><Link to="">Vehicles</Link></li>
+                                                <li><Link to="">Flower</Link></li>
+                                                <li><Link to="">Mountain</Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -58,11 +59,11 @@ class Footer extends Component {
                                         <h3 className="widget-title">Latest Post</h3>
                                         <div className="widget-content">
                                             <ul>
-                                                <li><a href="#">How to learn photography easy way</a></li>
-                                                <li><a href="#">Photography tips and tricks: 101</a></li>
-                                                <li><a href="#">Basic photography concepts for Beginner</a></li>
-                                                <li><a href="#">Photography environment setup tips</a></li>
-                                                <li><a href="#">How to become a pro photographar</a></li>
+                                                <li><Link to="">How to learn photography easy way</Link></li>
+                                                <li><Link to="">Photography tips and tricks: 101</Link></li>
+                                                <li><Link to="">Basic photography concepts for Beginner</Link></li>
+                                                <li><Link to="">Photography environment setup tips</Link></li>
+                                                <li><Link to="">How to become a pro photographar</Link></li>
                                             </ul>
                                         </div>
                                     </div>
