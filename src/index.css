@@ -51,6 +51,113 @@ nav.menu ul li a {
   text-transform: uppercase;
 }
 
+/* latest photos */
+.latest-photos {
+  padding: 50px 0;
+}
+
+.section-title{
+  font-weight: 300;
+  text-align: left;
+}
+
+.photo {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.photo .photo-wrapper .photo-thumb {
+  height: 200px;
+}
+
+.photo-content {
+  padding: 20px;
+}
+
+.photo-content h3 {
+  font-size: 20px;
+  line-height: 1;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.photo-content h3 a{
+  text-decoration: none;
+  color: #222;
+}
+
+.photo .photo-wrapper .photo-thumb img {
+  height: 100%;
+  width: 100%;
+}
+
+.author .icon {
+  width: 25px;
+  height: 25px;
+  background: #000;
+  color: #fff;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.author img{
+  border-radius: 50%;
+}
+
+.author .icon svg {
+  font-size: 14px;
+}
+
+.author .author-name p {
+  margin-bottom: 10px;
+}
+
+.author-name p a {
+  text-decoration: none;
+  color: #222;
+}
+
+.photo-meta{
+  padding: 20px;
+  border-top: 1px solid #f2f4f8;
+}
+
+.photo-meta .download .download-count p{
+  margin-bottom: 0;
+}
+
+.photo-meta .download-icon {
+  border: 1px solid #d5e3ee;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.photo-meta .download-icon svg path {
+  fill: #314352;
+}
+
+.photo-meta .download-icon svg {
+  font-size: 15px;
+}
+
+.download-btn a{
+  text-decoration: none;
+  color: #222;
+}
+
+.download-btn p {
+  border-radius: 20px;
+  border: 1px solid #d5e3ee;
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
 /* footer  */
 footer{
   margin: 50px 0;
