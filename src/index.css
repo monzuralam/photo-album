@@ -158,6 +158,21 @@ nav.menu ul li a {
   font-weight: 400;
 }
 
+/* Error */
+.error-section {
+  padding: 100px 0;
+}
+
+.error-section h1 {
+  font-size: 100px;
+  font-weight: 300;
+  color: #222;
+}
+
+.error-section p{
+  font-size: 24px;
+}
+
 /* footer  */
 footer{
   margin: 50px 0;
