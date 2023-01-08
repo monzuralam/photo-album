@@ -4,6 +4,7 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Blog from './components/pages/Blog'
 import Contact from './components/pages/Contact'
+import Photo from './components/pages/Photo';
 import Error from './components/pages/Error';
 import Footer from './components/Footer';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='blog' element={<Blog />} />
           <Route path='contact' element={<Contact />} />
+          <Route path='photo' element={<Photo />} />
           <Route path='*' element={<Error />} />
         </Routes>
         <Footer />

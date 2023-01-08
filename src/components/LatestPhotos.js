@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
+import { Link } from 'react-router-dom';
+
 class LatestPhotos extends Component {
     state = {
         photos: [],
@@ -122,12 +124,16 @@ class LatestPhotos extends Component {
                                             <div className="photo mb-4">
                                                 <div className="photo-wrapper">
                                                     <div className="photo-thumb">
-                                                        <a href={photo.links.html}>
+                                                        <Link to={"/photo?id="+photo.id} >
                                                             <img src={photo.urls.small} alt="" />
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                     <div className="photo-content text-start">
-                                                        <h3><a href={photo.links.html}>{photo.alt_description}</a></h3>
+                                                        <h3>
+                                                            <Link to={"/photo?id="+photo.id} >
+                                                                {photo.alt_description}
+                                                            </Link>
+                                                        </h3>
                                                         <div className="author d-flex">
                                                             <div className="icon d-flex align-items-center justify-content-center">
                                                                 <img src={photo.user.profile_image.small} alt={photo.alt_description} />
