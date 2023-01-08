@@ -8,13 +8,18 @@ class LatestPhotos extends Component {
     state = {
         photos: [],
         page: 1,
+        search_query: '',
+        searching: false,
         error: false
     }
 
     componentDidMount = (e) => {
+        const { page } = this.state;
+
         axios.get('https://api.unsplash.com/photos/?client_id=oD50GgPO_JQ3DU51-idDcfmudPcasp_e467hL-BmMcw&per_page=16').then((res) => {
             this.setState({
-                photos: res.data
+                photos: res.data,
+                page: page + 1
             })
         }).catch(() => {
             this.setState({
@@ -26,45 +31,89 @@ class LatestPhotos extends Component {
     }
 
     loadMoreImages = () => {
+        const { page, searching, search_query } = this.state;
+
+        this.setState( {
+            page: page + 1
+        } );
+
+        searching ?
+            axios.get('https://api.unsplash.com/search/photos/?client_id=oD50GgPO_JQ3DU51-idDcfmudPcasp_e467hL-BmMcw&per_page=16&page=' + page + '&query=' + search_query).then(
+                res => {
+                    this.setState({
+                        photos: res.data.results,
+                        search_query: search_query,
+                    })
+                }).catch(() => {
+                    this.setState({
+                        error: true
+                    })
+                }) :
+
+            axios.get('https://api.unsplash.com/photos/?client_id=oD50GgPO_JQ3DU51-idDcfmudPcasp_e467hL-BmMcw&per_page=16&page=' + page).then((res) => {
+                this.setState({
+                    photos: res.data
+                })
+            }).catch(() => {
+                this.setState({
+                    error: true
+                })
+            })
+
+        console.log( this.state.page )
+
+        window.scrollTo(0, 0);
+    }
+
+    searchPhotoTrigger = (e) => {
+        e.preventDefault();
+        const searchText = e.target[0].value;
         const { page } = this.state;
 
-        this.setState({
-            page: page + 1
-        })
-
-        axios.get('https://api.unsplash.com/photos/?client_id=oD50GgPO_JQ3DU51-idDcfmudPcasp_e467hL-BmMcw&per_page=16&page=' + page).then((res) => {
+        axios.get('https://api.unsplash.com/search/photos/?client_id=oD50GgPO_JQ3DU51-idDcfmudPcasp_e467hL-BmMcw&per_page=16&query=' + searchText + '& +page=' + page).then((res) => {
             this.setState({
-                photos: res.data
-            })
+                photos: res.data.results,
+                searching: true,
+                search_query: searchText,
+                page: 2
+            });
         }).catch(() => {
             this.setState({
                 error: true
             })
         })
 
-        window.scrollTo(0, 0);
+        console.log('submit');
+        console.log( this.state.page )
     }
 
     render() {
-        const { photos, error } = this.state;
+        const { photos, error, searching, search_query } = this.state;
         return (
             <>
                 <section className="latest-photos fix">
                     <div className="container">
                         <div className="row mb-5">
-                            <div className="col-md-6 col-12">
-                                <h2 className="section-title">Latest Photos</h2>
+                            <div className="col-md-9 col-12">
+                                <h2 className="section-title">
+                                    { searching ? <span>Search for: { search_query }</span> : <span>Latest Photos</span>}
+                                </h2>
                             </div>
-                            <div className="col-md-6 col-12">
-
+                            <div className="col-md-3 col-12">
+                                <div className="input-group mb-3">
+                                    <form action="" className='input-group search-form' onSubmit={this.searchPhotoTrigger}>
+                                        <input type="text" className="form-control" placeholder="Enter Keyword..." />
+                                        <input type="submit" className="btn btn-outline-secondary" value="Search" />
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div className="row">
                             {
-                                error && 
-                                    <div>
-                                        <h2>Network Error!</h2>
-                                    </div>
+                                error &&
+                                <div>
+                                    <h2>Network Error!</h2>
+                                </div>
                             }
                             {
                                 photos.map((photo, index) => {
