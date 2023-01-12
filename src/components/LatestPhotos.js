@@ -124,13 +124,13 @@ class LatestPhotos extends Component {
                                             <div className="photo mb-4">
                                                 <div className="photo-wrapper">
                                                     <div className="photo-thumb">
-                                                        <Link to={"/photo?id="+photo.id} >
+                                                        <Link to={"/photo/"+photo.id} >
                                                             <img src={photo.urls.small} alt="" />
                                                         </Link>
                                                     </div>
                                                     <div className="photo-content text-start">
                                                         <h3>
-                                                            <Link to={"/photo?id="+photo.id} >
+                                                            <Link to={`photo/${photo.id}`} >
                                                                 {photo.alt_description}
                                                             </Link>
                                                         </h3>
